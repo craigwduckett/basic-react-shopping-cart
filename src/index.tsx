@@ -6,37 +6,38 @@ import { store } from './app/store';
 import { setCartItems, setTotal } from './app/localStorage';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
-import { createServer } from "miragejs"
+import { createServer } from 'miragejs';
 
 createServer({
   routes() {
-    this.get("/api/products", () => [
+    this.get('/api/products', () => [
       {
-          "name": "Sledgehammer",
-          "price": 125.75
+        name: 'Sledgehammer',
+        price: 125.75,
       },
       {
-          "name": "Axe",
-          "price": 190.50
+        name: 'Axe',
+        price: 190.5,
       },
       {
-          "name": "Bandsaw",
-          "price": 562.13
-      }, {
-          "name": "Chisel",
-          "price": 12.9
+        name: 'Bandsaw',
+        price: 562.13,
       },
       {
-          "name": "Hacksaw",
-          "price": 18.45
-      }
-    ])
+        name: 'Chisel',
+        price: 12.9,
+      },
+      {
+        name: 'Hacksaw',
+        price: 18.45,
+      },
+    ]);
   },
-})
+});
 
 store.subscribe(() => {
-  setCartItems(store.getState().catalog.cartItems)
-  setTotal(store.getState().catalog.total)
+  setCartItems(store.getState().catalog.cartItems);
+  setTotal(store.getState().catalog.total);
 });
 
 ReactDOM.render(
