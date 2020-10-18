@@ -8,11 +8,3 @@
   grid-template-columns: auto auto auto auto auto;
   grid-gap: 10px;
 }
-
-.cartItems {
-}
-
-.lineItem {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-}
