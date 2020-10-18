@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Button } from '@material-ui/core';
 import numbro from 'numbro';
 import { RootState } from '../../app/store';
 
@@ -20,29 +21,32 @@ export const CatalogList = () => {
   }, [dispatch]);
 
   const renderedProducts = products.map((product) => (
-    <div className="product" key={product.name}>
+    <div className={styles.product} key={product.name}>
       <span className={styles.productImage}></span>
       <div className={styles.productName}>
         <p>
-          <a href="#">{product.name}</a>
+          <span>{product.name}</span>
         </p>
       </div>
       <div className={styles.productPrice}>
         <p>{numbro(product.price).formatCurrency({ mantissa: 2 })}</p>
       </div>
-      <button
+      <Button
       type="button"
+      variant="contained"
+      color="primary"
       onClick={() => {
         dispatch(addToCart(product));
       }}
     >
       Add to Cart
-    </button>
+    </Button>
     </div>
   ));
 
   return (
     <div className={styles.catalog}>
+      <h2>Products</h2>
       <div className={styles.products}>
         {renderedProducts}
       </div>

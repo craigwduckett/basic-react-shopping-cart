@@ -11,7 +11,7 @@ describe('Cart tests', () => {
       name: 'Sledgehammer',
       price: 125.75,
       quantity: 1,
-      lineTotal: 125.75
+      lineTotal: 125.75,
     },
   ];
   it('Section shows the first cart item name', () => {

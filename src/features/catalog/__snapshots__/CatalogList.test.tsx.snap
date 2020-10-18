@@ -8,34 +8,17 @@ Object {
       <div
         class="catalog"
       >
+        <h2>
+          Products
+        </h2>
         <div
           class="products"
-        >
-          <h2>
-            Products
-          </h2>
-          <div
-            class="productItems"
-          />
-        </div>
-        <div
-          class="cart"
-        >
+        />
+        <div>
           <h2>
             Cart
           </h2>
-          <div
-            class="cartItems"
-          >
-            Your cart is empty! Please add some items.
-          </div>
-          <div
-            class="cartTotal"
-          >
-            <strong>
-              $0.00
-            </strong>
-          </div>
+          Your cart is empty! Please add some items.
         </div>
       </div>
     </div>
@@ -44,34 +27,17 @@ Object {
     <div
       class="catalog"
     >
+      <h2>
+        Products
+      </h2>
       <div
         class="products"
-      >
-        <h2>
-          Products
-        </h2>
-        <div
-          class="productItems"
-        />
-      </div>
-      <div
-        class="cart"
-      >
+      />
+      <div>
         <h2>
           Cart
         </h2>
-        <div
-          class="cartItems"
-        >
-          Your cart is empty! Please add some items.
-        </div>
-        <div
-          class="cartTotal"
-        >
-          <strong>
-            $0.00
-          </strong>
-        </div>
+        Your cart is empty! Please add some items.
       </div>
     </div>
   </div>,
