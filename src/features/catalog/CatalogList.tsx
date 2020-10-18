@@ -5,12 +5,13 @@ import { RootState } from '../../app/store';
 
 import { addToCart, fetchProducts } from './catalogSlice';
 
-import { Cart } from './Cart'
+import { Cart } from './Cart';
 
 import styles from './CatalogList.module.css';
 
 export const CatalogList = () => {
   const products = useSelector((state: RootState) => state.catalog.products);
+  const cartItems = useSelector((state: RootState) => state.catalog.cartItems);
 
   const dispatch = useDispatch();
 
@@ -39,7 +40,7 @@ export const CatalogList = () => {
         <h2>Products</h2>
         <div className={styles.productItems}>{renderedProducts}</div>
       </div>
-      <Cart />
+      <Cart items={cartItems}/>
     </div>
   );
 };

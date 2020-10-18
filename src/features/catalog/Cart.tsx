@@ -3,17 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import numbro from 'numbro';
 import { RootState } from '../../app/store';
 
-import { removeFromCart } from './catalogSlice';
+import { CartItem, removeFromCart } from './catalogSlice';
 
 import styles from './Cart.module.css';
 
-export const Cart = () => {
-  const cartItems = useSelector((state: RootState) => state.catalog.cartItems);
+export const Cart = (props:any) => {
   const total = useSelector((state: RootState) => state.catalog.total);
 
   const dispatch = useDispatch();
-
-  const renderedCartItems = cartItems.map((cartItem) => (
+  const renderedCartItems = props.items.map((cartItem: CartItem) => (
     <div
       className={styles.lineItem}
       key={cartItem.name}
@@ -45,12 +43,12 @@ export const Cart = () => {
   }
 
   return (
-      <div className={styles.cart}>
-        <h2>Cart</h2>
-        <div className={styles.cartItems}>{cartContent}</div>
-        <div className={styles.cartTotal}>
-          <strong>{numbro(total).formatCurrency({ mantissa: 2 })}</strong>
-        </div>
+    <div className={styles.cart}>
+      <h2>Cart</h2>
+      <div className={styles.cartItems}>{cartContent}</div>
+      <div className={styles.cartTotal}>
+        <strong>{numbro(total).formatCurrency({ mantissa: 2 })}</strong>
       </div>
+    </div>
   );
 };
