@@ -20,25 +20,31 @@ export const CatalogList = () => {
   }, [dispatch]);
 
   const renderedProducts = products.map((product) => (
-    <div className={styles.items} key={product.name}>
-      <h3>{product.name}</h3>
-      <h5>{numbro(product.price).formatCurrency({ mantissa: 2 })}</h5>
+    <div className="product" key={product.name}>
+      <span className={styles.productImage}></span>
+      <div className={styles.productName}>
+        <p>
+          <a href="#">{product.name}</a>
+        </p>
+      </div>
+      <div className={styles.productPrice}>
+        <p>{numbro(product.price).formatCurrency({ mantissa: 2 })}</p>
+      </div>
       <button
-        type="button"
-        onClick={() => {
-          dispatch(addToCart(product));
-        }}
-      >
-        Add to Cart
-      </button>
+      type="button"
+      onClick={() => {
+        dispatch(addToCart(product));
+      }}
+    >
+      Add to Cart
+    </button>
     </div>
   ));
 
   return (
     <div className={styles.catalog}>
       <div className={styles.products}>
-        <h2>Products</h2>
-        <div className={styles.productItems}>{renderedProducts}</div>
+        {renderedProducts}
       </div>
       <Cart items={cartItems}/>
     </div>

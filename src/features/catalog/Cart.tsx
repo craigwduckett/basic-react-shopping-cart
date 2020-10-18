@@ -45,9 +45,15 @@ export const Cart = (props:any) => {
   return (
     <div className={styles.cart}>
       <h2>Cart</h2>
+      <div className={styles.lineItem}>
+      <div><strong>Name</strong></div>
+      <div><strong>Price</strong></div>
+      <div><strong>Quantity</strong></div>
+      <div><strong>Line Total</strong></div>
+      </div>
       <div className={styles.cartItems}>{cartContent}</div>
       <div className={styles.cartTotal}>
-        <strong>{numbro(total).formatCurrency({ mantissa: 2 })}</strong>
+        <strong>Total: {numbro(total).formatCurrency({ mantissa: 2 })}</strong>
       </div>
     </div>
   );
