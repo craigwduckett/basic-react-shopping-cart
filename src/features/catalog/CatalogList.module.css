@@ -1,0 +1,19 @@
+.catalog {
+    display: grid;
+    grid-template-columns: auto 15%;
+}
+
+.productItems {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+}
+
+.cartItems {
+    
+}
+
+.lineItem {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
